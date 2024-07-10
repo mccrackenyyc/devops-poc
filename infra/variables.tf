@@ -7,7 +7,13 @@ variable "subscription_id" {
 variable "location" {
     description = "Primary datacenter"
     type = string
-    default = "Canada Central"
+    default = "canadacentral"
+}
+
+variable "loc_short" {
+    description = "Primary datacenter shorthand"
+    type = string
+    default = "cc"
 }
 
 variable "env" {
