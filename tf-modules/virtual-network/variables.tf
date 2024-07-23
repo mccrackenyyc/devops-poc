@@ -27,3 +27,24 @@ variable "subnet_prefixes" {
   description = "The address prefixes for the subnets"
   type        = list(string)
 }
+
+variable "nsg_names" {
+  description = "The names of the Network Security Groups"
+  type        = list(string)
+}
+
+variable "nsg_rules" {
+  description = "The security rules for the NSGs"
+  type = list(object({
+    name                       = string
+    priority                   = number
+    direction                  = string
+    access                     = string
+    protocol                   = string
+    source_port_range          = string
+    destination_port_range     = string
+    source_address_prefix      = string
+    destination_address_prefix = string
+  }))
+  default = []
+}
